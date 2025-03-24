@@ -10,18 +10,26 @@
 using namespace std;
 
 int main() {
-    long long n,m;
-    cin >> n >> m;
-    int x=0;
-    while(n>0)
+    long long n;
+    string s,a;
+    cin >> n >> s;
+    int ans=0;
+    for(int i=0; i<n; i++)
     {
-        x++;
-        n--;
-        if(x%m==0)
+        int c=0;
+        for(int j=0; j<n; j++)
         {
-            n++;
+            if(s[i]==s[j] && s[i+1]==s[j+1])
+            {
+                c++;
+            }
+        }
+        if(ans<c)
+        {
+            ans = max(ans,c);
+            a = string(1,s[i])+string(1,s[i+1]);
         }
     }
-    cout << x << endl;
+    cout << a << endl;
     return 0;
 }
