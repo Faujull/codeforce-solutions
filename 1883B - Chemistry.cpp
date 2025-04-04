@@ -27,7 +27,8 @@ int main() {
         long long odd=0;
         for(int i=0; i<26; i++)
         {
-            odd+=all[i]%2;
+            if(all[i]%2!=0)
+            odd++;
         }
         if(odd>k+1)
         {
